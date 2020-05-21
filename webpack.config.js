@@ -1,14 +1,13 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CssWebpackPlugin = require('mini-css-extract-plugin');
-const autoprefixer = require('autoprefixer');
 const MinifyPlugin = require('babel-minify-webpack-plugin');
 
 module.exports = {
   mode: 'development',
   watch: true,
   entry: {
-    public: path.resolve(__dirname, './src/index.js'),
+    public: path.resolve(__dirname, './src/client/index.js'),
   },
   output: {
     path: path.resolve(__dirname, './build'),
@@ -43,22 +42,7 @@ module.exports = {
       { test: /\.html$/, use: 'html-loader' },
       {
         test: /\.less$/,
-        use: [
-          CssWebpackPlugin.loader,
-          'css-loader',
-          'less-loader',
-          {
-            loader: 'postcss-loader',
-            options: {
-              ident: 'postcss',
-              plugins: () => [
-                autoprefixer({
-                  browsers: ['>1%', 'last 4 versions', 'Firefox ESR', 'not ie < 9'],
-                }),
-              ],
-            },
-          },
-        ],
+        use: [CssWebpackPlugin.loader, 'css-loader', 'less-loader'],
       },
       {
         test: /\.(svg|png|jpg|jpeg|gif)$/,
