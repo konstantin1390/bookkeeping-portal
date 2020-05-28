@@ -1,0 +1,199 @@
+@import (reference) './custom.less';
+
+*,
+html,
+body {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+body {
+  background: @main-bg-color;
+  overflow: hidden;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ant-tabs-nav {
+  width: 100%;
+}
+
+.ant-tabs.ant-tabs-card .ant-tabs-card-bar {
+  .ant-tabs-tab {
+    width: 50%;
+    display: inline-flex;
+    margin: 0;
+    justify-content: center;
+    border-radius: 0;
+    border-color: #c4c4c4;
+    border-top: none;
+    background: #f1f1f1;
+    color: @black;
+
+    &:first-of-type {
+      border-radius: 0 0 4px 0;
+      border-left: none;
+    }
+
+    &:last-of-type {
+      border-radius: 0 0 0 4px;
+      border-right: none;
+    }
+
+    &:hover {
+      color: lighten(@black, 35%);
+    }
+  }
+
+  .ant-tabs-tab-active {
+    border-color: @white;
+    background: transparent;
+
+    &:hover {
+      color: @black;
+    }
+  }
+}
+
+.ant-table-thead > tr {
+  padding: 0 60px 0 20px;
+
+  th {
+    background: @white;
+    border-top: 1px solid #dadada;
+    border-bottom-color: #c4c4c4;
+  }
+}
+
+.ant-table-tbody > tr {
+  padding: 0 60px 0 20px;
+
+  &:nth-of-type(2n-1) {
+    background: #f8f8f8;
+  }
+
+  td {
+    border-bottom-color: #c4c4c4;
+  }
+}
+
+.ant-checkbox-checked {
+  &::after {
+    border-color: #1a8518;
+  }
+
+  .ant-checkbox-inner {
+    border-color: #1a8518;
+    background-color: #1a8518;
+
+    &::after {
+      background-color: #1a8518;
+    }
+  }
+}
+
+.ant-checkbox-indeterminate {
+  &::after {
+    border-color: #1a8518;
+  }
+
+  .ant-checkbox-inner {
+    border-color: #1a8518;
+
+    &::after {
+      background-color: #1a8518;
+    }
+  }
+}
+
+.ant-checkbox-wrapper:hover .ant-checkbox-inner,
+.ant-checkbox:hover .ant-checkbox-inner,
+.ant-checkbox-input:focus + .ant-checkbox-inner {
+  border-color: #1a8518;
+}
+
+.ant-pagination {
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+  position: relative;
+
+  &-item {
+    border: none;
+
+    a {
+      color: @black;
+
+      &:hover {
+        color: lighten(@black, 35%);
+      }
+    }
+
+    &-active a {
+      background: @black;
+      color: @white;
+
+      &:hover {
+        color: @white;
+      }
+    }
+  }
+
+  &-prev,
+  &-next {
+    position: absolute;
+    top: 25%;
+  }
+
+  &-prev {
+    left: 20px;
+  }
+
+  &-next {
+    right: 20px;
+  }
+}
+
+.TopButtonsContainer {
+  width: 100%;
+  padding: 20px 0;
+  display: flex;
+  justify-content: flex-end;
+
+  & > button {
+    margin-right: 20px;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 4px;
+  }
+}
+
+.icon {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  margin-right: 5px;
+  border: 1px solid #515254;
+  background: #515254;
+
+  & > .anticon {
+    margin: 0;
+
+    & > svg {
+      fill: @white;
+    }
+  }
+
+  &.button-icon {
+    width: 18px;
+    height: 18px;
+    font-size: 12px;
+  }
+}
