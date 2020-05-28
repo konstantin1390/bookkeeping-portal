@@ -1,13 +1,15 @@
+import ActionTypes from '../../../common/constants/actionTypes';
+
 const initialState = {
-  usedLocale: null
+  usedLocale: null,
 };
 
 export default (state = initialState, action) => {
   switch (action.type) {
-    case "SET_USED_LOCALE_STORE":
+    case ActionTypes.SET_USED_LOCALE_STORE:
       return {
         ...state,
-        usedLocale: action.payload
+        usedLocale: action.payload,
       };
 
     default: {

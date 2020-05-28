@@ -1,10 +1,6 @@
-export const setUsedLocaleStore = payload => ({
-  type: "SET_USED_LOCALE_STORE",
-  payload
-});
+import ActionTypes from '../../../common/constants/actionTypes';
 
-export const loadData = () => {
-  return {
-    type: "LOAD_USERS_DATA"
-  };
-};
+export const setUsedLocaleStore = payload => ({
+  type: ActionTypes.SET_USED_LOCALE_STORE,
+  payload,
+});
